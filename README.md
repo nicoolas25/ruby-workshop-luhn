@@ -17,12 +17,14 @@ D'abord, les chaînes de longueur inférieure ou égale à 1 ne sont pas valides
 
 ## Exemple 1: nombre de carte de crédit valide
 
+Notre nombre de départ:  
+
 ```text
 4539 1488 0343 6467
 ```
 
-On va modifier tous "deuxièmes" chiffres en partant de la droite. Ci-dessous, on a remplacé tous les chiffres qui ne vont
- pas être modifiés par un tiret bas, juste pour bien faire apparaître les chiffres qu'on va doubler, AVANT de les doubler.
+On va modifier tous les "deuxièmes" chiffres en partant de la droite. Ci-dessous, on a remplacé tous les chiffres qui ne 
+vont pas être modifiés par un tiret bas, juste pour bien faire apparaître les chiffres qu'on va doubler, AVANT de les doubler.
 
 ```text
 4_3_ 1_8_ 0_4_ 6_6_
