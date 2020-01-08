@@ -21,18 +21,18 @@ D'abord, les chaînes de longueur inférieure ou égale à 1 ne sont pas valides
 4539 1488 0343 6467
 ```
 
+On va modifier tous "deuxièmes" chiffres en partant de la droite. Ci-dessous, on a remplacé tous les chiffres qui ne vont
+ pas être modifiés par un tiret bas, juste pour bien faire apparaître les chiffres qu'on va doubler, AVANT de les doubler.
+
+```text
+4_3_ 1_8_ 0_4_ 6_6_
+```
+
 La première étape de l'algorithme de Luhn est de doubler chaque deuxième chiffre, en partant de la fin du nombre à droite.
 Ici le dernier chiffre, à droite est 7. On n'y touche pas. On avance d'un cran vers la gauche et on double ce chiffre, 
 ici 6. Si le chiffre doublé dépasse 9, on le remplace par la somme des ses chiffres. C'est le cas ici, car 2 x 6 donne 12, 
 donc on remplace 6 par `1 + 2 `, soit `3`. Ce qui équivaut aussi à retrancher 9 du chiffre doublé: 2 x 6 = 12, et 12 - 9 
 donne bien `3`
-
-```text
-4_3_ 1_8_ 0_4_ 6_6_
-```
-Ci-dessus, on a remplacé tous les chiffres qui ne vont pas être modifiés par un tiret bas, juste pour bien faire apparaître 
-les chiffres qu'on va doubler, AVANT de les doubler.
-
 
 Et après le doublement cela donne, toujours en masquant les chiffres n'étant pas modifiés:
 ```text
