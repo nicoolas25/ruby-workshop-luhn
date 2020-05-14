@@ -1,3 +1,7 @@
+# frozen_string_literal: true
+
+# Responsible of checking the validity of a numeric string
+# against the Luhn formula or 'mod 10' algorithm
 class Luhn
   attr_reader :input
 
@@ -12,15 +16,23 @@ class Luhn
   def valid?
     return false if input.length <= 1 || input =~ /\D/
 
-    transformed = input.reverse.chars.map(&:to_i)
-    transformed.map.with_index(1) do |int, idx|
-      if idx.even?
-        double = 2 * int
-        double -= 9 if double > 9
-        double
-      else
-        int
-      end
-    end.sum % 10 == 0
+    (checksum % 10).zero?
+  end
+
+  def checksum
+    reversed_chars_to_i
+      .map
+      .with_index(1) { |int, idx| idx.even? ? luhn_double(int) : int }
+      .sum
+  end
+
+  def reversed_chars_to_i
+    input.reverse.chars.map(&:to_i)
+  end
+
+  def luhn_double(digit)
+    result = 2 * digit
+    result -= 9 if result > 9
+    result
   end
 end
